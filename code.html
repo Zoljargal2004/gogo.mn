@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Tabs</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .tabs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tabs input[type="radio"] {
+        display: none;
+      }
+
+      .tabs label {
+        padding: 10px;
+        background: #ccc;
+        border: 1px solid #bbb;
+        cursor: pointer;
+      }
+
+      .tabs label:hover {
+        background: #bbb;
+      }
+
+      .tabs input[type="radio"]:checked + label {
+        background: #ddd;
+        border-bottom: none;
+      }
+
+      .content {
+        display: none;
+        padding: 10px;
+        border: 1px solid #bbb;
+        border-top: none;
+      }
+
+      #tab1:checked ~ #content1,
+      #tab2:checked ~ #content2,
+      #tab3:checked ~ #content3 {
+        display: block;
+        inset: ;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <input type="radio" id="tab1" name="tab" checked />
+      <label for="tab1">Tab 1</label>
+      <input type="radio" id="tab2" name="tab" />
+      <label for="tab2">Tab 2</label>
+      <input type="radio" id="tab3" name="tab" />
+      <label for="tab3">Tab 3</label>
+
+      <div class="content" id="content1">
+        <p>This is the content for Tab 1.</p>
+      </div>
+      <div class="content" id="content2">
+        <p>This is the content for Tab 2.</p>
+      </div>
+      <div class="content" id="content3">
+        <p>This is the content for Tab 3.</p>
+      </div>
+    </div>
+  </body>
+</html>
